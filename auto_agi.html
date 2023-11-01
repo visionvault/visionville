@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Research & News Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Research & News Page</h1>
+
+        <h2>Search</h2>
+        <div class="input-group mb-3">
+            <input type="text" id="search-input" class="form-control" placeholder="Search for information...">
+        </div>
+
+        <h2>Research Articles</h2>
+        <div id="research-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Unexpected Improvements to Expected Improvement for Bayesian Optimization</h5>
+                    <p class="card-text">Expected Improvement (EI) is arguably the most popular acquisition function in Bayesian optimization...</p>
+                    <a href="http://arxiv.org/abs/2310.20708v1" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">What's In My Big Data?</h5>
+                    <p class="card-text">Large text corpora are the backbone of language models. However, we have a limited understanding of the content of these corpora...</p>
+                    <a href="http://arxiv.org/abs/2310.20707v1" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">DDAM-PS: Diligent Domain Adaptive Mixer for Person Search</h5>
+                    <p class="card-text">Person search (PS) is a challenging computer vision problem where the objective is to achieve joint optimization for pedestrian detection and re-identification (ReID)...</p>
+                    <a href="http://arxiv.org/abs/2310.20706v1" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <!-- Show more button for research articles -->
+            <div> <br> </div>
+            <button class="btn btn-secondary" id="show-more-research">Show More</button>
+        </div>
+<div> <br> </div>
+        <h2>News References</h2>
+        <div id="news-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Artificial General Intelligence (AGI) And The Coming Wave</h5>
+                    <p class="card-text">This years Wall Street Journal Tech Live event heralds the arrival of Artificial General Intelligence (AGI) and a glimpse into the future.</p>
+                    <a href="https://www.forbes.com/sites/randybean/2023/10/24/artificial-general-intelligence-agi-and-the-coming-wave/" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AGI Utopia or Dystopia: What's the Real Story?</h5>
+                    <p class="card-text">While we've made significant strides in AI research, the question of whether we will ever achieve AGI is a complex and multifaceted one.</p>
+                    <a href="https://www.cmswire.com/digital-experience/the-quest-for-achieving-artificial-general-intelligence/" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">How close are we to AI that surpasses human intelligence? | Brookings</h5>
+                    <p class="card-text">Artificial general intelligence may be far off, but its arrival will be transformative and raise challenging questions regarding regulation.</p>
+                    <a href="https://www.brookings.edu/articles/how-close-are-we-to-ai-that-surpasses-human-intelligence/" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <!-- Show more button for news references -->
+            <div> <br> </div>
+            <button class="btn btn-secondary" id="show-more-news">Show More</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and custom JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Show/hide additional research articles
+        $("#show-more-research").click(function() {
+            $("#research-container .card:gt(2)").toggle();
+        });
+
+        // Show/hide additional news references
+        $("#show-more-news").click(function() {
+            $("#news-container .card:gt(2)").toggle();
+        });
+
+        // Search functionality
+        $("#search-input").on("input", function() {
+            var searchTerm = $(this).val().toLowerCase();
+            $(".card").each(function() {
+                var cardText = $(this).find(".card-text").text().toLowerCase();
+                if (cardText.includes(searchTerm)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
