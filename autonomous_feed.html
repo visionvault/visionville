@@ -1,0 +1,191 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Autonomous Agents in Healthcare</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Autonomous Agents in Healthcare</h1>
+
+        <h2>Search</h2>
+        <div class="input-group mb-3">
+            <input type="text" id="search-input" class="form-control" placeholder="Search for information...">
+        </div>
+
+        <h2>Research Articles</h2>
+        <div id="research-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Idempotent Generative Network</h5>
+                    <p class="card-text">We propose a new approach for generative modeling based on training a neural
+                        network to be idempotent. An idempotent operator is one that can be applied
+                        sequentially without changing the result beyond the initial application, namely
+                        $f(f(z))=f(z)$. The proposed model $f$ is trained to map a source distribution
+                        (e.g, Gaussian noise) to a target distribution (e.g. realistic images) using
+                        the following objectives: (1) Instances from the target distribution should map
+                        to themselves, namely $f(x)=x$. We define the target manifold as the set of all
+                        instances that $f$ maps to themselves. (2) Instances that form the source
+                        distribution should map onto the defined target manifold. This is achieved by
+                        optimizing the idempotence term, $f(f(z))=f(z)$ which encourages the range of
+                        $f(z)$ to be on the target manifold. Under ideal assumptions such a process
+                        provably converges to the target distribution. This strategy results in a model
+                        capable of generating an output in one step, maintaining a consistent latent
+                        space, while also allowing sequential applications for refinement.
+                        Additionally, we find that by processing inputs from both target and source
+                        distributions, the model adeptly projects corrupted or modified data back to
+                        the target manifold. This work is a first step towards a ``global projector''
+                        that enables projecting any input into a target data distribution.</p>
+                    <a href="http://arxiv.org/abs/2311.01462v1" class="btn btn-primary" target="_blank">Read
+                        more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">The Property Law of Crypto Tokens</h5>
+                    <p class="card-text">This article addresses the lack of comprehensive studies on Web3
+                        technologies, primarily due to lawyers' reluctance to explore technical
+                        intricacies. Understanding the underlying technological foundations is crucial
+                        to enhance the credibility of legal opinions. This article aims to illuminate
+                        these foundations, debunk myths, and concentrate on determining the legal
+                        status of crypto-assets in the context of property rights within the
+                        distributed economy. In addition, this article notes that the intangible nature
+                        of crypto-assets that derive value from distributed registries, and their
+                        resistance to deletion, makes crypto-assets more akin to the autonomy of
+                        intellectual property than physical media. The article presents illustrative
+                        examples from common law (United States, United Kingdom, New Zealand) and civil
+                        law (Germany, Austria, Poland) systems. Proposing a universal solution, it
+                        advocates a comprehensive framework safeguarding digital property - data
+                        ownership - extending beyond the confines of Web3.
+
+                        This article presents a comprehensive, multi-layered approach to the analysis
+                        of tokens as digital content and virtual goods. The approach, universally
+                        applicable to various of such goods, scrutinizes property on three distinct
+                        layers: first, the rights to the virtual good itself; second, the rights to the
+                        assets linked to the virtual good; and third, the rights to the intellectual
+                        property intricately associated with the token. Additionally, the paper
+                        provides concise analysis of the conflict of laws rules applicable to virtual
+                        goods. It also delves into issues concerning formal requirements for the
+                        transfer of intellectual property rights, licensing, the first sale
+                        (exhaustion) doctrine, the concept of the lawful acquirer, and other crucial
+                        aspects of intellectual property in the realm of virtual goods, particularly
+                        within the emerging metaverse.</p>
+                    <a href="http://arxiv.org/abs/2311.01461v1" class="btn btn-primary" target="_blank">Read
+                        more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Implicit Chain of Thought Reasoning via Knowledge Distillation</h5>
+                    <p class="card-text">To augment language models with the ability to reason, researchers usually
+                        prompt or finetune them to produce chain of thought reasoning steps before
+                        producing the final answer. However, although people use natural language to
+                        reason effectively, it may be that LMs could reason more effectively with some
+                        intermediate computation that is not in natural language. In this work, we
+                        explore an alternative reasoning approach: instead of explicitly producing the
+                        chain of thought reasoning steps, we use the language model\'s internal hidden
+                        states to perform implicit reasoning. The implicit reasoning steps are
+                        distilled from a teacher model trained on explicit chain-of-thought reasoning,
+                        and instead of doing reasoning "horizontally" by producing intermediate words
+                        one-by-one, we distill it such that the reasoning happens "vertically" among
+                        the hidden states in different layers. We conduct experiments on a multi-digit
+                        multiplication task and a grade school math problem dataset and find that this
+                        approach enables solving tasks previously not solvable without explicit
+                        chain-of-thought, at a speed comparable to no chain-of-thought.</p>
+                    <a href="http://arxiv.org/abs/2311.01460v1" class="btn btn-primary" target="_blank">Read
+                        more</a>
+                </div>
+            </div>
+            <!-- Show more button for research articles -->
+            <div> <br> </div>
+            <button class="btn btn-secondary" id="show-more-research">Show More</button>
+        </div>
+        <div> <br> </div>
+        <h2>News References</h2>
+        <div id="news-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">The market for Autonomous AI and Autonomous Agents is projected to grow from USD 4.8 billion in 2023 to USD 28.5 billion by 2028, at a CAGR of 43.0%</h5>
+                    <p class="card-text">during the forecast period. Autonomous AI and autonomous agents are
+                        interconnected concepts within the field of AI that involve the ability...</p>
+                    <a href="https://finance.yahoo.com/news/market-autonomous-ai-autonomous-agents-142800473.html" class="btn btn-primary" target="_blank">Read
+                        more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Autonomous AI and Autonomous Agents Market worth $28.5 billion by 2028, growing at a CAGR of 43.0%: Report by MarketsandMarkets.</h5>
+                    <p class="card-text">Chicago, Sept. 25, 2023 (GLOBE NEWSWIRE) -- The Autonomous AI and
+                        Autonomous Agents Market is projected to grow from USD 4.8 billion in
+                        2023...</p>
+                    <a href="https://www.globenewswire.com/news-release/2023/09/25/2748759/0/en/Autonomous-AI-and-Autonomous-Agents-Market-worth-28-5-billion-by-2028-growing-at-a-CAGR-of-43-0-Report-by-MarketsandMarkets.html" class="btn btn-primary" target="_blank">Read
+                        more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Industry Watcher's Digest</h5>
+                    <p class="card-text">Three years from now if not sooner, almost half the world's physicians will
+                        be allowing generative AI to help with clinical decisions.</p>
+                    <a href="https://aiin.healthcare/topics/artificial-intelligence/industry-watchers-digest-16" class="btn btn-primary" target="_blank">Read
+                        more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Insignia AI Notes #10: Autonomous AI agents as apps of the future - TNGlobal</h5>
+                    <p class="card-text">Broadly speaking, internet connectivity and smartphone devices were
+                        necessary for mobile applications to flourish in demand.</p>
+                    <a href="https://technode.global/2023/10/11/insignia-ai-notes-10-autonomous-ai-agents-as-apps-of-the-future/" class="btn btn-primary" target="_blank">Read
+                        more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Improving trust in autonomous technology</h5>
+                    <p class="card-text">The combined power of AI and robotics is revolutionizing mobility and
+                        manufacturing. Automated vehicles, airplanes, people movers,...</p>
+                    <a href="https://www.technologyreview.com/2023/02/22/1066578/improving-trust-in-autonomous-technology/" class="btn btn-primary" target="_blank">Read
+                        more</a>
+                </div>
+            </div>
+            <!-- Show more button for news references -->
+            <div> <br> </div>
+            <button class="btn btn-secondary" id="show-more-news">Show More</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and custom JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Show/hide additional research articles
+        $("#show-more-research").click(function() {
+            $("#research-container .card:gt(4)").toggle();
+        });
+
+        // Show/hide additional news references
+        $("#show-more-news").click(function() {
+            $("#news-container .card:gt(4)").toggle();
+        });
+
+        // Search functionality
+        $("#search-input").on("input", function() {
+            var searchTerm = $(this).val().toLowerCase();
+            $(".card").each(function() {
+                var cardText = $(this).find(".card-text").text().toLowerCase();
+                if (cardText.includes(searchTerm)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
