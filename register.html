@@ -1,32 +1,56 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Register</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-<h1>Newsfeed for Kids</h1>
-<nav>
-<a href="/">Home</a>
-<a href="/search">Search</a>
-<a href="/login">Login</a>
-<a href="/register">Register</a>
-</nav>
-</header>
+ 
+from flask import Flask, render_template, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
 
-<main>
-<section id="register">
-<form action="/register" method="POST">
-<input type="text" name="username" placeholder="Username">
-<input type="password" name="password" placeholder="Password">
-<input type="submit" value="Register">
-</form>
-</section>
-</main>
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///newsfeed.db'
+db = SQLAlchemy(app)
 
-<footer>
-<p>Copyright 2023 Newsfeed for Kids</p>
-</footer>
-</body>
-</html>
+class Article(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  title = db.Column(db.String(80), unique=True, nullable=False)
+  content = db.Column(db.Text, nullable=False)
+
+  def __repr__(self):
+    return '<Article %r>' % self.title
+
+@app.route("/")
+def index():
+  articles = Article.query.all()
+  return render_template("index.html", articles=articles)
+
+@app.route("/article/<id>")
+def article(id):
+  article = Article.query.get(id)
+  return render_template("article.html", article=article)
+
+@app.route("/search")
+def search():
+  return render_template("search.html")
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+  if request.method == "GET":
+    return render_template("login.html")
+  else:
+    username = request.form["username"]
+    password = request.form["password"]
+    if login_user(username, password):
+      return redirect(url_for("index"))
+    else:
+      return render_template("login.html", error="Invalid credentials")
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+  if request.method == "GET":
+    return render_template("register.html")
+  else:
+    username = request.form["username"]
+    password = request.form["password"]
+    if register_user(username, password):
+      return redirect(url_for("index"))
+    else:
+      return render_template("register.html", error="Username already exists")
+
+if __name__ == "__main__":
+  app.run(debug=True)
