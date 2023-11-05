@@ -1,0 +1,108 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edge Computing Research & News</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Edge Computing Research & News</h1>
+
+        <h2>Search</h2>
+        <div class="input-group mb-3">
+            <input type="text" id="search-input" class="form-control" placeholder="Search for information...">
+        </div>
+        <br>
+        <h2>Research Articles</h2>
+        <div id="research-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Research Title 1</h5>
+                    <p class="card-text">Research Description 1</p>
+                    <a href="URL1" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Research Title 2</h5>
+                    <p class="card-text">Research Description 2</p>
+                    <a href="URL2" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Research Title 3</h5>
+                    <p class="card-text">Research Description 3</p>
+                    <a href="URL3" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            
+            <!-- Show more button for research articles -->
+            <div> <br> </div>
+            <button class="btn btn-secondary" id="show-more-research">Show More</button>
+        </div>
+<div> <br> </div>
+        <h2>News Articles</h2>
+        <div id="news-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">News Title 1</h5>
+                    <p class="card-text">News Description 1</p>
+                    <a href="URL4" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">News Title 2</h5>
+                    <p class="card-text">News Description 2</p>
+                    <a href="URL5" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">News Title 3</h5>
+                    <p class="card-text">News Description 3</p>
+                    <a href="URL6" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            
+            <!-- Show more button for news articles -->
+            <div> <br> </div>
+            <button class="btn btn-secondary" id="show-more-news">Show More</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and custom JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Show/hide additional research articles
+        $("#show-more-research").click(function() {
+            $("#research-container .card:gt(4)").toggle();
+        });
+
+        // Show/hide additional news articles
+        $("#show-more-news").click(function() {
+            $("#news-container .card:gt(4)").toggle();
+        });
+
+        // Search functionality
+        $("#search-input").on("input", function() {
+            var searchTerm = $(this).val().toLowerCase();
+            $(".card").each(function() {
+                var cardText = $(this).find(".card-text").text().toLowerCase();
+                if (cardText.includes(searchTerm)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
