@@ -1,0 +1,98 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Intelligent Robotics and Autonomous Agents Research & News</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Intelligent Robotics and Autonomous Agents Research & News</h1>
+
+        <h2>Search</h2>
+        <div class="input-group mb-3">
+            <input type="text" id="search-input" class="form-control" placeholder="Search for information...">
+        </div>
+        <h2>Research</h2>
+        <div id="research-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Intelligent Robotics and Autonomous Agents: A New Series from MIT Press</h5>
+                    <p class="card-text">This new series, Intelligent Robotics and Autonomous Agents, joins these research communities together and focuses on their commonalities, such as emergent intelligence, coordinated activity, and situatedness.</p>
+                    <a href="https://mitpress.mit.edu/series/intelligent-robotics-and-autonomous-agents-series/" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">The Market for Autonomous AI and Autonomous Agents is Projected to Grow from USD 4.8 Billion in 2023 to USD 28.5 Billion by 2028, at a CAGR of 43.0%</h5>
+                    <p class="card-text">The market for Autonomous AI and Autonomous Agents is expected to grow significantly in the coming years, driven by the increasing adoption of these technologies in various industries, such as healthcare, manufacturing, and transportation.</p>
+                    <a href="https://finance.yahoo.com/news/market-autonomous-ai-autonomous-agents-142800473.html" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Autonomous Agents and Multi-Agent Systems | Home - Springer</h5>
+                    <p class="card-text">Autonomous Agents and Multi-Agent Systems is an international journal that publishes high-quality research papers on all aspects of autonomous agents and multi-agent systems.</p>
+                    <a href="https://www.springer.com/journal/10458" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+        </div>
+        <h2>News</h2>
+        <div id="news-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">New Autonomous Robot Can Learn to Perform Complex Tasks by Watching Humans</h5>
+                    <p class="card-text">Researchers at the University of California, Berkeley have developed a new autonomous robot that can learn to perform complex tasks by watching humans.</p>
+                    <a href="https://www.engadget.com/new-autonomous-robot-can-learn-to-perform-complex-tasks-by-watching-humans-113314111.html" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Self-Driving Cars Could Cause 1 Million Job Losses in the US</h5>
+                    <p class="card-text">A new study by the Center for Automotive Research estimates that self-driving cars could cause 1 million job losses in the US by 2030.</p>
+                    <a href="https://www.cnbc.com/2023/01/17/self-driving-cars-could-cause-1-million-job-losses-in-the-us.html" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">The Future of Autonomous Vehicles: 5 Key Trends to Watch</h5>
+                    <p class="card-text">The autonomous vehicle industry is rapidly evolving, with new technologies and innovations emerging all the time. Here are five key trends to watch in the future of autonomous vehicles.</p>
+                    <a href="https://www.forbes.com/sites/forbestechcouncil/2023/01/16/the-future-of-autonomous-vehicles-5-key-trends-to-watch/?sh=618646986634" class="btn btn-primary" target="_blank">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and custom JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Show/hide additional research articles
+        $("#show-more-research").click(function() {
+            $("#research-container .card:gt(2)").toggle();
+        });
+
+        // Show/hide additional news references
+        $("#show-more-news").click(function() {
+            $("#news-container .card:gt(2)").toggle();
+        });
+
+        // Search functionality
+        $("#search-input").on("input", function() {
+            var searchTerm = $(this).val().toLowerCase();
+            $(".card").each(function() {
+                var cardText = $(this).find(".card-text").text().toLowerCase();
+                if (cardText.includes(searchTerm)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
